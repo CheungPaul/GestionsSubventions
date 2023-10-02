@@ -206,8 +206,8 @@ public class SubventionsController implements Initializable
             racineAnnee = new TreeItem("Par années");
 
 
-            int montantParSecteur;
-            int montantParAnnee;
+            int montantParSecteur = 0;
+            int montantParAnnee = 0;
 
             String villeSelected = lvVillesStats.getSelectionModel().getSelectedItem().toString();
 
@@ -216,11 +216,12 @@ public class SubventionsController implements Initializable
                 {
                     for (Structure uneStructure : lesSubventions.get(villeSelected).get(unSecteur).get(uneAnnee)){
                         laStructure.add(uneStructure.getNomStructure(), uneStructure.getMontant());
+                        montantParAnnee = montantParAnnee + uneStructure.getMontant();
                     }
-                    laStructure.add(lesSubventions.get(villeSelected).get(unSecteur).get(uneAnnee));
-                    parAnnee.put(uneAnnee,laStructure);
-                    parSecteur.put(unSecteur,laStructure);
+                    parAnnee.put()
+
                 }
+                parSecteur.put()
 
             }
             for (Object s : parSecteur.keySet()){
