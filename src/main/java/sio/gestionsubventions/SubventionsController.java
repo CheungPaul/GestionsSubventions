@@ -3,6 +3,7 @@ package sio.gestionsubventions;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.ParallelCamera;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import sio.gestionsubventions.Model.Structure;
@@ -236,7 +237,8 @@ public class SubventionsController implements Initializable
                 racineAnnee.getChildren().add(annees);
             }
 
-
+            tvMontantsParSecteurs.setRoot(parSecteur);
+            tvMontantsParAnnees.setRoot(parAnnee);
 
 
 
