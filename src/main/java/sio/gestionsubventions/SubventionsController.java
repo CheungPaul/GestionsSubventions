@@ -179,13 +179,39 @@ public class SubventionsController implements Initializable
             alert.setHeaderText("");
             alert.setContentText("La subvention a été bien enregistrée.");
             alert.showAndWait();
-        }
 
+            lvVillesStats.getItems().clear();
+            for (String uneVille :lesSubventions.keySet()){
+                lvVillesStats.getItems().add(uneVille);
+            }
+        }
     }
 
     @FXML
     public void lvVillesStatsClicked(Event event)
     {
+        if (!lesSubventions.isEmpty())
+        {
+            HashMap parSecteur = new HashMap<>();
+            HashMap parAnnee = new HashMap<>();
+            ArrayList laStructure = new ArrayList<Structure>();
 
+            int montantParSecteur;
+            int montantParAnnee;
+
+            String villeSelected = lvVillesStats.getSelectionModel().getSelectedItem().toString();
+
+            for (String unSecteur : lesSubventions.get(villeSelected).keySet()){
+                for (int uneAnnee : lesSubventions.get(villeSelected).get(unSecteur).keySet())
+                {
+                    laStructure.add(lesSubventions.get(villeSelected).get(unSecteur).get(uneAnnee));
+                    parAnnee.put(uneAnnee,laStructure);
+
+                    parSecteur.put();
+
+                }
+            }
+
+        }
     }
 }
