@@ -216,7 +216,7 @@ public class SubventionsController implements Initializable
                 for (int uneAnnee : lesSubventions.get(villeSelected).get(unSecteur).keySet())
                 {
                     for (Structure uneStructure : lesSubventions.get(villeSelected).get(unSecteur).get(uneAnnee)){
-                        laStructure.add(uneStructure.getNomStructure(), uneStructure.getMontant());
+                        laStructure.add(uneStructure);
                         montantParAnnee = montantParAnnee + uneStructure.getMontant();
                     }
                     parAnnee.put()
