@@ -196,6 +196,16 @@ public class SubventionsController implements Initializable
             HashMap parAnnee = new HashMap<>();
             ArrayList laStructure = new ArrayList<Structure>();
 
+            TreeItem racineSecteurs;
+            TreeItem racineAnnee;
+
+            TreeItem secteurs;
+            TreeItem annees;
+
+            racineSecteurs = new TreeItem("Par secteurs");
+            racineAnnee = new TreeItem("Par années");
+
+
             int montantParSecteur;
             int montantParAnnee;
 
@@ -206,11 +216,27 @@ public class SubventionsController implements Initializable
                 {
                     laStructure.add(lesSubventions.get(villeSelected).get(unSecteur).get(uneAnnee));
                     parAnnee.put(uneAnnee,laStructure);
-
-                    parSecteur.put();
-
+                    parSecteur.put(unSecteur,laStructure);
                 }
+
             }
+            for (Object s : parSecteur.keySet()){
+                secteurs = new TreeItem(s.toString());
+                secteurs.setExpanded(true);
+                racineSecteurs.getChildren().add(secteurs);
+            }
+
+            for (Object a : parAnnee.keySet()){
+                annees = new TreeItem(a.toString());
+                annees.setExpanded(true);
+                racineAnnee.getChildren().add(annees);
+            }
+
+
+
+
+
+
 
         }
     }
